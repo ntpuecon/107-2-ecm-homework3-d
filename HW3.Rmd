@@ -337,22 +337,32 @@ $$
   首先進行以下設定:
 $s=0$表示newtaipei, $s=1$表示taipei,$t=0$表示2014年,$t=1$表示2016年。
   其中:
+  
 $\bar{y}_{newtaipei,2014}=\hat{\beta}$
+
 $\bar{y}_{newtaipei,2016}=\hat{\beta}$
+
 $\bar{y}_{taipei,2014}=\hat{\beta}$
+
 $\bar{y}_{taipei,2016}=\hat{\beta}+\beta^*$
 
   又$y_{st,i}=\beta_0+\beta^*D1_s*B1_t+\epsilon$
 
   則要算得$\hat{\beta}^*$有以下三種辦法:
+  
 $\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2014}$
+
 $\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}$
+
 $\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{taipei,2014}$
+
 
 （3）承接上題。說明OLS估計不能代表「悠遊卡福利政策」影響。
 
 第(3)題回答:
   因為OLS沒有考慮到政策變動前後以及地區不同的差異，因此，若要探討悠悠卡福利政策，須將各個地區、時間的demean寫出來，再進行個別探討。
+
+
 
 接著考慮如下迴歸模型：
 $$
@@ -365,18 +375,25 @@ $$
 
 第(4)題回答:
   首先進行以下設定:$s=0$表示newtaipei, $s=1$表示taipei,$t=0$表示2014年,$t=1$表示2016年。
+  
   其中:
+  
 $\bar{y}_{newtaipei,2014}=\beta_0$
+
 $\bar{y}_{newtaipei,2016}=\beta_0$
+
 $\bar{y}_{taipei,2014}=\beta_0+\alpha_1$
+
 $\bar{y}_{taipei,2016}=\beta_0+\alpha_1+\beta^*$
 
 $\hat{\beta^*}=\bar{y}_{taipei,2016}-\bar{y}_{taipei,2014}=\beta_0+\alpha_1+\beta^*-(\beta_0+\alpha_1)=\beta^*$
+
 
 （5）承接上題。說明OLS估計不能代表「悠遊卡福利政策」影響。
 
 第(5)題回答:
   雖然計算出OLS的$\beta^*$，但這還不能代表台北市悠悠卡福利政策是有效的，因為可能存在著其他因素，造成台北市的老人活動力上升，所以在這議題上必須要進行更深入的探討。
+
 
 接著考慮如下迴歸模型：
 $$
@@ -389,13 +406,19 @@ $$
 
 第(6)題回答:
   首先進行以下設定:$s=0$表示newtaipei, $s=1$表示taipei,$t=0$表示2014年,$t=1$表示2016年。
+  
   其中:
+  
 $\bar{y}_{newtaipei,2014}=\beta_0$
+
 $\bar{y}_{newtaipei,2016}=\beta_0+\delta_1$
+
 $\bar{y}_{taipei,2014}=\beta_0$
+
 $\bar{y}_{taipei,2016}=\beta_0+\delta_1+\beta^*$
 
 $\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}=\beta_0+\delta_1+\beta^*-(\beta_0+\delta_1)=\beta^*$
+
 
 （7）承接上題。說明OLS估計不能代表「悠遊卡福利政策」影響。
 
@@ -411,20 +434,29 @@ $$
 （8）說明第6小題「2016年台北市老人平均活動力」減去「2016年新北市老人平均活動力」不只帶有政策效果$\beta^*$，還帶有兩市立足點（即沒有政策效果下）的差異$\alpha_1$。
 
 第(8)題回答:
+
   首先進行以下設定:$s=0$表示newtaipei, $s=1$表示taipei,$t=0$表示2014年,$t=1$表示2016年。
+  
   其中:
+  
 $\bar{y}_{newtaipei,2014}=\beta_0$
+
 $\bar{y}_{newtaipei,2016}=\beta_0+\delta_1$
+
 $\bar{y}_{taipei,2014}=\beta_0+\alpha_1$
+
 $\bar{y}_{taipei,2016}=\beta_0+\delta_1+\alpha_1+\beta^*$
 
 $\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}=\beta_0+\delta_1+\alpha_1+\beta^*-(\beta_0+\delta_1)=\beta^*+\alpha_1$
+
 
 （9）說明$\beta^*$的OLS估計是第8小題的相減結果，再減去「2014年台北市減去新北市的老人平均活動力」，其中後者反應了兩市立足點的差異（即$\alpha_1$）。
 
 第(9)題回答:
   2014年台北市老人-2014年新北市老人:$\beta_0+\alpha1-\beta_0=\alpha_1$
+  
   將第(8)題中的$\beta^*+\alpha_1$減去上式算出的$\alpha_1$，最後會求得$\beta^*$ ，這就是悠悠卡的政策福利效果。
+
 
 （10）很明顯的DiD需要假設：在「不存在福利政策下」，「2014年雙北平均差異」及「2016年雙北平均差異」要相同，即立足點差異不因時間改變。若2016年雙北老年人平均年齡差距拉大（假設北市較高），說明DiD估計會有偏誤。要如何決解？
 
