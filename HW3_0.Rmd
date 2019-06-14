@@ -17,64 +17,6 @@ $$y_{it}=x_{it}'\beta+c_{i}+\epsilon_{it}.$$
 $$\Delta y_{it}=\Delta x_{it}'\beta+\Delta \epsilon_{it}.$$
 若資料只有t=0,1兩期，說明使用demean估計與一階差分估計會得到相同結果（可以假設x為單一變數讓證明更簡單）。
 
-
-Demean
-$$\begin{equation*}
-\begin{split}
-y_{i1}-\bar{y_{i.}}=(x_{i1}-\bar{x_{i.}})\beta+(\epsilon_{i1}-\bar{\epsilon_{i.}})
-\quad\quad\quad\quad\quad (1)
-\end{split}
-\end{equation*}$$
-
-$$\begin{equation*}
-\begin{split}
-y_{i0}-\bar{y_{i.}}=(x_{i0}-\bar{x_{i.}})\beta+(\epsilon_{i0}-\bar{\epsilon_{i.}})
-\quad\quad\quad\quad\quad (2)
-\end{split}
-\end{equation*}$$
-
-一階差分
-$$\begin{equation*}
-\begin{split}
-y_{i1}-{y_{i0}}=(x_{i1}-{x_{i0}})\beta+(\epsilon_{i1}-{\epsilon_{i0}})
-\quad\quad\quad\quad\quad (3)
-\end{split}
-\end{equation*}$$
-
-$$\begin{equation*}
-\begin{split}
-\bar{y_{i.}}={\frac{y_{i1}-{y_{i0}}}{2}}, \bar{x_{i.}}={\frac{x_{i1}-{x_{i0}}}{2}}, 
-\bar{\epsilon_{i.}}={\frac{\epsilon_{i1}-{\epsilon_{i0}}}{2}}
-\end{split}
-\end{equation*}$$
-帶入(1),(2)式之後，得到(4),(5)式
-$$\begin{equation*}
-\begin{split}
-\frac{1}{2}(y_{i1}-{y_{i0}})=\frac{1}{2}(x_{i1}-{x_{i0}})\beta+\frac{1}{2}(\epsilon_{i1}-{\epsilon_{i0}})
-\end{split}
-\end{equation*}$$
-
-$$\begin{equation*}
-\begin{split}
-(y_{i1}-{y_{i0}})=(x_{i1}-{x_{i0}})\beta+(\epsilon_{i1}-{\epsilon_{i0}})\quad\quad\quad\quad\quad(4)
-\end{split}
-\end{equation*}$$
-
-$$\begin{equation*}
-\begin{split}
-\frac{1}{2}(y_{i0}-{y_{i1}})=\frac{1}{2}(x_{i0}-{x_{i1}})\beta+\frac{1}{2}(\epsilon_{i0}-{\epsilon_{i1}})
-\end{split}
-\end{equation*}$$
-
-$$\begin{equation*}
-\begin{split}
-(y_{i1}-{y_{i0}})=(x_{i1}-{x_{i0}})\beta+(\epsilon_{i1}-{\epsilon_{i0}})\quad\quad\quad\quad\quad(5)
-\end{split}
-\end{equation*}$$
-
-(4),(5)式和(3)式一樣，故有相同的估計式值$$\hat{\beta}$$
-
-
 ## 2 廣義固定效果
 考慮以下廣義固定效果模型： 
 $$y_{it}=x_{it}'\beta+c_{i}+\delta_{t}+\epsilon_{it},$$
@@ -92,32 +34,6 @@ D(w_{it}|\bar{w}_{i.},\bar{w}_{.t},\bar{\bar{w}})=w_{it}-\bar{w}_{i.}-\bar{w}_{.
 $$
 說明對廣義固定效果模型左右式一起進行$D(.)$函數的demean轉換可以去除$c_i$及$\delta_t$兩個固定效果。
 
-$$
-\begin{array}{lcl}
-\bar{c}_{i.}&=&\frac{\sum_{t=1}^T c_{i}}{T}&=& c_{i}\\
-\bar{c}_{.t}&=&\frac{\sum_{i=1}^N c_{i}}{N}&=& \bar{c}\\
-\bar{\bar{c}}&=&\frac{\sum_{i=1}^N\sum_{t=1}^T c_{i}}{NT}&=& \bar{c}
-\end{array}
-$$
-$$
-\begin{array}{lcl}
-\bar{\delta}_{i.}&=&\frac{\sum_{t=1}^T \delta_{t}}{T}&=& \bar{\delta}\\
-\bar{\delta}_{.t}&=&\frac{\sum_{i=1}^N \delta_{t}}{N}&=& {\delta}_{t}\\
-\bar{\bar{\delta}}&=&\frac{\sum_{i=1}^N\sum_{t=1}^T \delta_{t}}{NT}&=& \bar{\delta}
-\end{array}
-$$
-$$
-\begin{array}{lcl}
-D(c_{i}|\bar{c}_{i.},\bar{c}_{.t},\bar{\bar{c}})=c_{i}-\bar{c}_{i.}-\bar{c}_{.t}+\bar{\bar{c}}&=&c_{i}-c_{i}-\bar{c}+\bar{c}&=&0
-\end{array}
-$$
-$$
-\begin{array}{lcl}
-D(\delta_{t}|\bar{\delta}_{i.},\bar{\delta}_{.t},\bar{\bar{\delta}})=\delta_{t}-\bar{\delta}_{i.}-\bar{\delta}_{.t}+\bar{\bar{\delta}}&=&\delta_{t}-\bar{\delta}-\delta_{t}+\bar{\delta}&=&0
-\end{array}
-$$
-
-
 ## 3 Panel data的迴歸殘差
 考慮迴歸模型：
 $$
@@ -132,17 +48,6 @@ $$
   * $v_{it}=\epsilon_{it}-\alpha_i$為拆解後殘差。
   
 （1）證明$\frac{\sum_{it} v_{it}\alpha_{it}}{NT}=0$。（註：當兩隨機變數w及z，其平均值為0時，$E(wz)=0$表示兩者covariance為0，即兩者無線性關連，故此題說明研究者的拆解方式會保證兩者sample covariance為0，有樣本上的零線性關連）
-
-$$
-\begin{array}{lcl}
-\frac{\sum_{i=1}^N\sum_{t=1}^T v_{it} \alpha_{it}}{NT}&=&
-\frac{\sum_{i=1}^N\alpha_{i}\sum_{t=1}^T v_{it} }{NT}&=&
-\frac{\sum_{i=1}^N\alpha_{i}\sum_{t=1}^T (\epsilon_{it}-\alpha_i) }{NT}&=&
-\frac{\sum_{i=1}^N\alpha_{i}[\sum_{t=1}^T \epsilon_{it}-T \frac{\sum_{t=1}^T\epsilon_{it}}
-{T}] }{NT}&=&
-0
-\end{array}
-$$
 
 （2）說明$E(v_{it}\alpha_i)=0$。（說理過程所使用的假設及定理都必需清楚寫下） 
 
