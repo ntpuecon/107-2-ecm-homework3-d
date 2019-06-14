@@ -148,7 +148,62 @@ $$
 
 令$\sigma_{\alpha}^2=V(\alpha_i)$，$\sigma_{v}^2=V(v_{it})$，及$\sigma_{\alpha,v}=cov(\alpha_i,v_{it})$
 
+$$
+\begin{array}{lcl}
+E(v_{it}\alpha_i)&=&cov(v_{it},\alpha_i)+E(\alpha_i)E(v_{it})
+\end{array}
+$$
+random sampling
+$$
+\begin{array}{lcl}
+cov(v_{it},\alpha_i)=0
+\end{array}
+$$
+假設
+$$
+\begin{array}{lcl}
+E(\alpha_i)E(v_{it})=0
+\end{array}
+$$
+
 （3）說明$cov(\alpha_i,v_{it})=0$且推導$V(\epsilon_{it})$，及$cov(\epsilon_{it},\epsilon_{is})$當$t\neq s$。
+
+information decomposition
+$$
+\begin{array}{lcl}
+V(\epsilon_{it})&=&
+cov(v_{it}+\alpha_i)cov(v_{it}+\alpha_i)
+\end{array}
+$$
+$v_{it}$與$\alpha_i$獨立
+$$
+\begin{array}{lcl}
+cov(v_{it},\alpha_i)=0\\
+cov(v_{is},\alpha_i)=0\\
+cov(v_{it},v_{it})+cov(\alpha_i,\alpha_i)&=&6v^2+6\alpha^2
+\end{array}
+$$
+$$
+\begin{array}{lcl}
+cov(\epsilon_{is},\epsilon_{is})&=&
+cov(v_{it}+\alpha_i)cov(v_{is}+\alpha_i)&=&
+cov(v_{it},v_{is})+cov(v_{is},\alpha_i)+cov(v_{it},\alpha_i)+cov(\alpha_i,\alpha_i)
+\end{array}
+$$
+假設無自我相關
+$$
+\begin{array}{lcl}
+cov(v_{it},v_{is})=0
+\end{array}
+$$
+$v_{it}$與$\alpha_i$獨立
+$$
+\begin{array}{lcl}
+cov(v_{it},\alpha_i)=0\\
+cov(v_{is},\alpha_i)=0
+\end{array}
+$$
+
 
 （4）由於家戶單位為隨機抽出，我們可以假設對任意的s及t，$cov(\epsilon_{it},\epsilon_{js})=0$當$i\neq j$（即任兩不同家戶的迴歸模型殘差無關）。
 
@@ -170,7 +225,87 @@ $$
 $$
 請推導$\Omega$矩陣內容（此即為Random effect模型的殘差共變異矩陣）。推導步驟若有用到任何假設，必需清楚標明。
 
+$\epsilon_{it}=v_{it}+\alpha_i$<br />
+$v_{it}與\alpha_i$獨立<br />
+假設$E(\epsilon_{i}\epsilon_{j}|X)=E(\epsilon_{i}\epsilon_{j})$<br />
+已知$cov(\epsilon_{iT},\epsilon_{js})=0$<br />
+
+$$
+\begin{array}{lcl}
+\mathbf{\Omega} &=&
+E\begin{bmatrix}
+\mathbf{\epsilon_1}\mathbf{\epsilon_1}^{'}|X & 0 & \dots & 0 \\
+0 & \ddots & & \vdots \\
+\vdots & & \ddots\\
+0& \dots & & \mathbf{\epsilon_n}\mathbf{\epsilon_n}^{'}|X
+\end{bmatrix} &=&
+E\begin{bmatrix}
+\mathbf\Omega_1 & 0 & \dots & 0 \\
+0 & \ddots & & \vdots \\
+\vdots & & \ddots\\
+0& \dots & & \Omega_n
+\end{bmatrix} 
+\end{array}
+$$
+$$
+\begin{array}{lcl}
+\mathbf{E(\epsilon_i{\epsilon_i}^{'})} &=&
+E\begin{bmatrix}
+\epsilon_{i1}{\epsilon_{1}}^{'}  & \dots & \\
+\vdots & \ddots & \\
+\epsilon_{in}{\epsilon_{1}}^{'} & \dots & \mathbf{\epsilon_n}\mathbf{\epsilon_n}^{'}
+\end{bmatrix} 
+\end{array}
+$$
+
+$$
+\begin{array}{lcl}
+\Omega_1=E(\epsilon_{i1}\epsilon_{i1}) &=&
+cov(v_{i1}+\alpha_i)cov(v_{i1}+\alpha_i) &=&
+\begin{bmatrix}
+6v^2+6\alpha^2  & \dots & \\
+\vdots & \ddots & \\
+6\alpha^2 & \dots & 6v^2+6\alpha^2
+\end{bmatrix} 
+\end{array}
+$$
+$\Omega_1=\Omega_2=...\Omega_n$<br />
+假設$cov(v_{it},v_{is})=0$
+
+
+
 （6）請問Fixed effect model的殘差指的是什麼？它的共變異矩陣在前述設定下會長怎麼樣？
+$$
+\begin{array}{lcl}
+\mathbf{E(v_{it}v_{ij})} &=&
+\begin{bmatrix}
+\mathbf\Omega_1 & 0 & \dots & 0 \\
+0 & \ddots & & \vdots \\
+\vdots & & \ddots\\
+0& \dots & & \Omega_n
+\end{bmatrix}  
+\end{array}
+$$
+$E(v_{it})^2=cov(v_{it},v_{it})=6^2v$<br />
+假設無自我相關 $E(v_{it},v_{is})=0$
+$$
+\begin{array}{lcl}
+\mathbf{\Omega_i} &=&
+E\begin{bmatrix}
+{v_{i1}}^2  & \dots & \\
+\vdots & \ddots & \\
+{v_{in}}{v_{i1}} & \dots & {v_{in}}^2
+\end{bmatrix}   &=&
+\begin{bmatrix}
+6^2v & 0 & \dots & 0 \\
+0 & \ddots & & \vdots \\
+\vdots & & \ddots\\
+0& \dots & & 6^2v
+\end{bmatrix}  
+\end{array}
+$$
+
+
 
 ## 4 DiD
 考慮以下新聞：2015年8月北市3項老人福利政策施予對象以年滿65歲以上老人為主，只要持有敬老悠遊卡就可享有乘車優惠。
