@@ -153,23 +153,15 @@ $$
 
 令$\sigma_{\alpha}^2=V(\alpha_i)$，$\sigma_{v}^2=V(v_{it})$，及$\sigma_{\alpha,v}=cov(\alpha_i,v_{it})$
 
-$$
-\begin{array}{lcl}
-E(v_{it}\alpha_i)&=&cov(v_{it},\alpha_i)+E(\alpha_i)E(v_{it})
-\end{array}
-$$
-random sampling
-$$
-\begin{array}{lcl}
-cov(v_{it},\alpha_i)=0
-\end{array}
-$$
-假設
-$$
-\begin{array}{lcl}
-E(\alpha_i)E(v_{it})=0
-\end{array}
-$$
+$E(v_{it}a{i})=\sum_i\sum_tv_{it}a_{i}*p(v_{it},a_{i})$\
+
+$v_{it},a_{i}$獨立，因此$p(v_{it},a_{i})$可以改寫成$p(v_{it})*p(a_{i})$\
+
+另外，我們假設$p(v_{it})與p(a_{i})$都不隨i與t改變而變動。此時:
+$E(v_{it}a{i})=p(v)p(a)\sum_i\sum_tv_{it}a_{i}$\
+
+(1)的結果告訴我們等號右式子是0。
+
 
 （3）說明$cov(\alpha_i,v_{it})=0$且推導$V(\epsilon_{it})$，及$cov(\epsilon_{it},\epsilon_{is})$當$t\neq s$。
 
