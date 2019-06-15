@@ -350,11 +350,11 @@ $\bar{y}_{taipei,2016}=\hat{\beta}+\beta^*$
 
   則要算得$\hat{\beta}^*$有以下三種辦法:
   
-$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2014}$
+$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2014}$\
 
-$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}$
+$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}$\
 
-$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{taipei,2014}$
+$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{taipei,2014}$\
 
 
 （3）承接上題。說明OLS估計不能代表「悠遊卡福利政策」影響。
@@ -378,15 +378,15 @@ $$
   
   其中:
   
-$\bar{y}_{newtaipei,2014}=\beta_0$
+$\bar{y}_{newtaipei,2014}=\beta_0$\
 
-$\bar{y}_{newtaipei,2016}=\beta_0$
+$\bar{y}_{newtaipei,2016}=\beta_0$\
 
-$\bar{y}_{taipei,2014}=\beta_0+\alpha_1$
+$\bar{y}_{taipei,2014}=\beta_0+\alpha_1$\
 
-$\bar{y}_{taipei,2016}=\beta_0+\alpha_1+\beta^*$
+$\bar{y}_{taipei,2016}=\beta_0+\alpha_1+\beta^*$\
 
-$\hat{\beta^*}=\bar{y}_{taipei,2016}-\bar{y}_{taipei,2014}=\beta_0+\alpha_1+\beta^*-(\beta_0+\alpha_1)=\beta^*$
+$\hat{\beta^*}=\bar{y}_{taipei,2016}-\bar{y}_{taipei,2014}=\beta_0+\alpha_1+\beta^*-(\beta_0+\alpha_1)=\beta^*$\
 
 
 （5）承接上題。說明OLS估計不能代表「悠遊卡福利政策」影響。
@@ -409,15 +409,15 @@ $$
   
   其中:
   
-$\bar{y}_{newtaipei,2014}=\beta_0$
+$\bar{y}_{newtaipei,2014}=\beta_0$\
 
-$\bar{y}_{newtaipei,2016}=\beta_0+\delta_1$
+$\bar{y}_{newtaipei,2016}=\beta_0+\delta_1$\
 
-$\bar{y}_{taipei,2014}=\beta_0$
+$\bar{y}_{taipei,2014}=\beta_0$\
 
-$\bar{y}_{taipei,2016}=\beta_0+\delta_1+\beta^*$
+$\bar{y}_{taipei,2016}=\beta_0+\delta_1+\beta^*$\
 
-$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}=\beta_0+\delta_1+\beta^*-(\beta_0+\delta_1)=\beta^*$
+$\hat{\beta}^*=\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}=\beta_0+\delta_1+\beta^*-(\beta_0+\delta_1)=\beta^*$\
 
 
 （7）承接上題。說明OLS估計不能代表「悠遊卡福利政策」影響。
@@ -439,15 +439,15 @@ $$
   
   其中:
   
-$\bar{y}_{newtaipei,2014}=\beta_0$
+$\bar{y}_{newtaipei,2014}=\beta_0$\
 
-$\bar{y}_{newtaipei,2016}=\beta_0+\delta_1$
+$\bar{y}_{newtaipei,2016}=\beta_0+\delta_1$\
 
-$\bar{y}_{taipei,2014}=\beta_0+\alpha_1$
+$\bar{y}_{taipei,2014}=\beta_0+\alpha_1$\
 
-$\bar{y}_{taipei,2016}=\beta_0+\delta_1+\alpha_1+\beta^*$
+$\bar{y}_{taipei,2016}=\beta_0+\delta_1+\alpha_1+\beta^*$\
 
-$\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}=\beta_0+\delta_1+\alpha_1+\beta^*-(\beta_0+\delta_1)=\beta^*+\alpha_1$
+$\bar{y}_{taipei,2016}-\bar{y}_{newtaipei,2016}=\beta_0+\delta_1+\alpha_1+\beta^*-(\beta_0+\delta_1)=\beta^*+\alpha_1$\
 
 
 （9）說明$\beta^*$的OLS估計是第8小題的相減結果，再減去「2014年台北市減去新北市的老人平均活動力」，其中後者反應了兩市立足點的差異（即$\alpha_1$）。
